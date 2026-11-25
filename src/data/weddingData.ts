@@ -1,0 +1,291 @@
+import {
+  Announcement,
+  GalleryPreviewItem,
+  GamePreview,
+  GuestProfile,
+  WeddingDay,
+  WeddingEvent,
+  WeddingInfo,
+} from '@/types/wedding';
+
+export const weddingImages = {
+  coupleHero: require('../../assets/images/wedding/couple-hero.jpg'),
+  mehendi: require('../../assets/images/wedding/event-mehendi.jpg'),
+  haldi: require('../../assets/images/wedding/event-haldi.jpg'),
+  sangeet: require('../../assets/images/wedding/event-sangeet.jpg'),
+  wedding: require('../../assets/images/wedding/event-wedding.jpg'),
+  reception: require('../../assets/images/wedding/event-reception.jpg'),
+  guestAvatar: require('../../assets/images/wedding/guest-avatar.jpg'),
+  polaroid1: require('../../assets/images/wedding/polaroid-1.jpg'),
+  polaroid2: require('../../assets/images/wedding/polaroid-2.jpg'),
+} as const;
+
+export const demoWeddingInfo: WeddingInfo = {
+  id: 'sparsh-alangita-2027',
+  coupleNames: 'Sparsh & Alangita',
+  brideName: 'Alangita',
+  groomName: 'Sparsh',
+  displayDate: '15 February 2027',
+  location: 'Guwahati, Assam',
+  hashtag: '#ForeverSparshAlangita',
+  timezone: 'Asia/Kolkata',
+  startDateIso: '2027-02-13T12:00:00+05:30',
+  endDateIso: '2027-02-15T23:30:00+05:30',
+  closingQuote: 'Some moments become memories.\nSome memories become forever.',
+  closingSignOff: 'Sparsh & Alangita',
+  heroImage: weddingImages.coupleHero,
+};
+
+export const demoGuestProfile: GuestProfile = {
+  id: 'guest-ananya',
+  firstName: 'Ananya',
+  fullName: 'Ananya Sharma',
+  greetingSubtitle: 'Let the celebrations begin.',
+  relationship: 'Childhood Friend of the Bride',
+  side: 'bride',
+  avatar: weddingImages.guestAvatar,
+  unreadNotifications: 3,
+};
+
+export const demoWeddingDays: WeddingDay[] = [
+  {
+    id: 'day-1',
+    dateIso: '2027-02-13',
+    dayNumber: 1,
+    shortDate: '13 FEB',
+    weekday: 'Saturday',
+    title: 'Arrivals & Henna',
+  },
+  {
+    id: 'day-2',
+    dateIso: '2027-02-14',
+    dayNumber: 2,
+    shortDate: '14 FEB',
+    weekday: 'Sunday',
+    title: 'Marigolds & Music',
+  },
+  {
+    id: 'day-3',
+    dateIso: '2027-02-15',
+    dayNumber: 3,
+    shortDate: '15 FEB',
+    weekday: 'Monday',
+    title: 'The Sacred Vows',
+  },
+];
+
+export const demoWeddingEvents: WeddingEvent[] = [
+  // DAY 1
+  {
+    id: 'welcome-lunch',
+    dayId: 'day-1',
+    dateIso: '2027-02-13',
+    title: 'Welcome Lunch',
+    subtitle: 'Assamese heritage flavours & warm reunions',
+    startTimeIso: '2027-02-13T12:30:00+05:30',
+    endTimeIso: '2027-02-13T15:00:00+05:30',
+    displayTime: '12:30 PM',
+    venue: 'The Brahmaputra Verandah',
+    dressCode: 'Effortless Linen & Ivory',
+    description:
+      'Ease into the weekend with traditional Assamese delicacies, cold-pressed botanicals, and sunlit conversations overlooking the river.',
+    theme: 'welcome',
+    coverImage: weddingImages.mehendi,
+    highlights: ['Live flute recital', 'Regional tasting menu', 'Welcome hampers'],
+  },
+  {
+    id: 'mehendi-music',
+    dayId: 'day-1',
+    dateIso: '2027-02-13',
+    title: 'Mehendi & Music',
+    subtitle: 'Henna artistry, folk melodies & afternoon tea',
+    startTimeIso: '2027-02-13T16:00:00+05:30',
+    endTimeIso: '2027-02-13T19:00:00+05:30',
+    displayTime: '4:00 PM',
+    venue: 'The Royal Courtyard',
+    dressCode: 'Shades of Green',
+    description:
+      'An intimate afternoon of intricate bridal henna, dusty rose florals, dholak folk songs, and chilled rosewater coolers.',
+    theme: 'mehendi',
+    coverImage: weddingImages.mehendi,
+    highlights: ['Artisan mehendi artists', 'Folk dholak ensemble', 'Bespoke bangle bar'],
+  },
+  {
+    id: 'cocktail-evening',
+    dayId: 'day-1',
+    dateIso: '2027-02-13',
+    title: 'Cocktail Evening',
+    subtitle: 'Starlit toasts & vinyl nostalgia',
+    startTimeIso: '2027-02-13T20:00:00+05:30',
+    endTimeIso: '2027-02-13T23:30:00+05:30',
+    displayTime: '8:00 PM',
+    venue: 'The Heritage Conservatory',
+    dressCode: 'Midnight & Champagne',
+    description:
+      'Raise a glass under brass lanterns with botanical cocktails, jazz-infused classics, and late-night conversations.',
+    theme: 'sangeet',
+    coverImage: weddingImages.sangeet,
+    highlights: ['Signature couple cocktails', 'Jazz & indie acoustic set', 'Polaroid guestbook'],
+  },
+
+  // DAY 2
+  {
+    id: 'haldi-ceremony',
+    dayId: 'day-2',
+    dateIso: '2027-02-14',
+    title: 'Haldi Ceremony',
+    subtitle: 'Sacred turmeric, marigolds & morning blessings',
+    startTimeIso: '2027-02-14T10:00:00+05:30',
+    endTimeIso: '2027-02-14T12:30:00+05:30',
+    displayTime: '10:00 AM',
+    venue: 'Lotus Pavilion Lawn',
+    dressCode: 'Turmeric & Marigold',
+    description:
+      'A joyful morning bathed in golden sunlight, cascading marigold garlands, sandalwood paste, and playful flower showers.',
+    theme: 'haldi',
+    coverImage: weddingImages.haldi,
+    highlights: ['Phoolon ki holi', 'Traditional brass urli', 'Fresh thandai bar'],
+  },
+  {
+    id: 'family-games',
+    dayId: 'day-2',
+    dateIso: '2027-02-14',
+    title: 'Family Games',
+    subtitle: 'Lawn antakshari, trivia & friendly rivalry',
+    startTimeIso: '2027-02-14T15:30:00+05:30',
+    endTimeIso: '2027-02-14T17:30:00+05:30',
+    displayTime: '3:30 PM',
+    venue: 'Champa Garden',
+    dressCode: 'Playful Pastels',
+    description:
+      'Team Bride vs. Team Groom face off in nostalgic lawn games, musical antakshari, and couple trivia.',
+    theme: 'welcome',
+    coverImage: weddingImages.haldi,
+    highlights: ['Team Bride vs Groom', 'High tea & chaat', 'Trophy presentation'],
+  },
+  {
+    id: 'sangeet-night',
+    dayId: 'day-2',
+    dateIso: '2027-02-14',
+    title: 'Sangeet Night',
+    subtitle: 'Choreographed stories & candlelit dancing',
+    startTimeIso: '2027-02-14T19:30:00+05:30',
+    endTimeIso: '2027-02-15T00:00:00+05:30',
+    displayTime: '7:30 PM',
+    venue: 'Grand Durbar Hall',
+    dressCode: 'Regal Jewel Tones',
+    description:
+      'An unforgettable evening of family performances, warm chandeliers, and dancing well past midnight.',
+    theme: 'sangeet',
+    coverImage: weddingImages.sangeet,
+    highlights: ['Family dance showcases', 'Couple first dance', 'Midnight mithai counter'],
+  },
+
+  // DAY 3
+  {
+    id: 'baraat-procession',
+    dayId: 'day-3',
+    dateIso: '2027-02-15',
+    title: 'Baraat',
+    subtitle: 'Dhol beats, vintage car & joyful procession',
+    startTimeIso: '2027-02-15T16:00:00+05:30',
+    endTimeIso: '2027-02-15T17:30:00+05:30',
+    displayTime: '4:00 PM',
+    venue: 'Eastern Palace Gate',
+    dressCode: 'Traditional Indian Festive',
+    description:
+      'Join the groom’s spirited procession with brass band melodies, safas, and celebratory dancing to the mandap.',
+    theme: 'wedding',
+    coverImage: weddingImages.wedding,
+    highlights: ['Safa tying ceremony', 'Live brass band', 'Milni welcome'],
+  },
+  {
+    id: 'wedding-ceremony',
+    dayId: 'day-3',
+    dateIso: '2027-02-15',
+    title: 'Wedding Ceremony',
+    subtitle: 'Sacred pheras beneath the jasmine mandap',
+    startTimeIso: '2027-02-15T18:00:00+05:30',
+    endTimeIso: '2027-02-15T20:30:00+05:30',
+    displayTime: '6:00 PM',
+    venue: 'The Lotus Mandap',
+    dressCode: 'Heritage Silks & Heirloom Gold',
+    description:
+      'Witness Sparsh and Alangita take their seven sacred vows surrounded by mogra garlands, Vedic chants, and twilight diyas.',
+    theme: 'wedding',
+    coverImage: weddingImages.wedding,
+    highlights: ['Varmala at sunset', 'Sacred pheras', 'Aashirwad blessings'],
+  },
+  {
+    id: 'grand-reception',
+    dayId: 'day-3',
+    dateIso: '2027-02-15',
+    title: 'Reception',
+    subtitle: 'Candlelit banquet & celebratory toasts',
+    startTimeIso: '2027-02-15T21:00:00+05:30',
+    endTimeIso: '2027-02-15T23:30:00+05:30',
+    displayTime: '9:00 PM',
+    venue: 'The Ivory Ballroom',
+    dressCode: 'Evening Elegance',
+    description:
+      'An intimate candlelit dinner celebrating the newlyweds with heartfelt speeches, champagne toasts, and classical strings.',
+    theme: 'reception',
+    coverImage: weddingImages.reception,
+    highlights: ['Champagne tower toast', 'Curated sit-down feast', 'Acoustic string quartet'],
+  },
+];
+
+export const demoAnnouncements: Announcement[] = [
+  {
+    id: 'ann-1',
+    title: 'Courtyard Surprise',
+    message: 'Everyone, gather near the courtyard for a surprise game at 5 PM.',
+    timestampLabel: 'Just now',
+    createdAtIso: '2027-02-13T15:45:00+05:30',
+    category: 'surprise',
+    isPinned: true,
+  },
+  {
+    id: 'ann-2',
+    title: 'Sangeet Curtain Call',
+    message: 'The Sangeet begins at 7:30 PM. Family performers, please meet backstage 20 minutes early.',
+    timestampLabel: '25m ago',
+    createdAtIso: '2027-02-13T15:20:00+05:30',
+    category: 'schedule',
+  },
+  {
+    id: 'ann-3',
+    title: 'Haldi Film Roll',
+    message: "Don't forget to capture your Haldi memories on the disposable camera — film develops at midnight!",
+    timestampLabel: '2h ago',
+    createdAtIso: '2027-02-13T13:30:00+05:30',
+    category: 'memory',
+  },
+];
+
+export const demoGamePreview: GamePreview = {
+  id: 'couple-trivia',
+  title: 'How well do you know the couple?',
+  subtitle: 'Wedding Edition · 10 Questions',
+  prompt: 'From their first coffee in Guwahati to who takes longer to get ready — test your insider knowledge.',
+  participantCount: 42,
+  questionCount: 10,
+  ctaLabel: 'Play now',
+};
+
+export const demoGalleryPreviews: GalleryPreviewItem[] = [
+  {
+    id: 'gal-1',
+    caption: 'Marigold showers',
+    takenBy: 'Rohan K.',
+    image: weddingImages.polaroid1,
+    rotationDeg: -4,
+  },
+  {
+    id: 'gal-2',
+    caption: 'Sparklers at dusk',
+    takenBy: 'Meera V.',
+    image: weddingImages.polaroid2,
+    rotationDeg: 3.5,
+  },
+];
